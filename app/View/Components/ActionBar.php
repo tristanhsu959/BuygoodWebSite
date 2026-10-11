@@ -2,21 +2,19 @@
 
 namespace App\View\Components;
 
-use App\Facades\AppManager;
-use App\Enums\Area;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 
-class Profile extends Component
+class ActionBar extends Component
 {
-	 /**
+	/**
      * Create a new component instance.
      */
     public function __construct()
     {
-        // :profile="AppManager::getCurrentUser()->toArray()" :areaOptions="Area::options()" :signoutRoute="route('signout')"
+        
     }
 
     /**
@@ -24,9 +22,9 @@ class Profile extends Component
      */
     public function render(): View|Closure|string
     {
-		$profile = $this->_getProfile();
+		#$profile = $this->_getProfile();
 		
-        return view('components.profile', ['currentUser' => $profile]);
+        return view('components.action-bar', []);
     }
 	
 	private function _getProfile()

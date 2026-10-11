@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\ViewModels\HomeViewModel;
-use App\Enums\FormAction;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,8 +17,6 @@ class HomeController extends Controller
 	
 	public function index(Request $request)
 	{
-		$this->_viewModel->action = FormAction::HOME;
-		
 		return view('home')->with('viewModel', $this->_viewModel);
 	}
 	

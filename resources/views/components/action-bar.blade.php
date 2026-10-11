@@ -1,24 +1,16 @@
 
-<header x-data='@json($initData)' class="orange top-nav">
+<header x-data="" class="appbar">
+	<div class="brand">
+		<img src="{{ asset('images/logo.png') }}"/>
+	</div>
+	
 	<nav>
-		<header x-show="!$store.menu.active" class="orange">
-			<img src="{{ asset('images/logo.png') }}" />
-		</header>
-		
-		<a :href="backUrl" x-show="backUrl" class="button circle transparent">
-			<i>arrow_back</i>
-		</a>
-		<h6 class="max small" x-html="breadcrumb.join('<i>chevron_right</i>')"></h6>
-		
-		<button class="circle transparent menu" @click="$store.menu.active = !$store.menu.active">
-			<i x-show="!$store.menu.active">menu</i>
-			<i x-show="$store.menu.active">menu_open</i>
-		</button>
-		<a :href="homeRoute" x-show="!isHome" class="button circle transparent">
-			<i>home</i>
-		</a>
-		<button class="circle transparent" data-ui="#profile">
-			<i>person</i>
-		</button>
+		<a class="button transparent"><i class="fa-brands fa-square-facebook"></i></a>
+		<a class="button transparent">最新消息</a>
+		<a class="button transparent">品牌故事</a>
+		<a class="button transparent">美味餐點</a>
+		<a class="button transparent">線上訂餐</a>
+		<a class="button transparent">加入我們</a>
+		<a class="button transparent">加盟合作</a>
 	</nav>
 </header>
