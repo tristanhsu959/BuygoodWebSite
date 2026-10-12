@@ -22,19 +22,22 @@ class ActionBar extends Component
      */
     public function render(): View|Closure|string
     {
-		#$profile = $this->_getProfile();
-		
-        return view('components.action-bar', []);
+		$menus = $this->getMenus();
+		return view('components.action-bar')->with('menus', $menus);
     }
 	
-	private function _getProfile()
+	private function getMenus()
 	{
-		$data = [];
-		$data['profile'] = AppManager::getCurrentUser()->toArray();
-		$data['options']['area'] = Area::options();
-		$data['options']['signoutRoute'] = route('signout');
-		$data['options']['updateRoute'] = route('profile.update.post');
+		$config = config('web.menu');
 		
-		return $data;
+		$menus = collect($config)->map(function($item, $key){
+			$temp['name'] 	= $item['name'];
+			$temp['style'] 	= $item['style'];
+			$temp['url'] 	= ($item['isRoute']) ? route($item['routeName']) :  $item['routeName'];
+			
+			return $temp;
+		})->toArray();
+		
+		return $menus;
 	}
 }

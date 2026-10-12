@@ -47,60 +47,16 @@ body {
 	}
 	
 	footer {
-		background: var(--primary-bg);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--primary-bg) !important;
+		color: #fff;
 	}
 	
 	/* Main Container */
 	main.app {
-		max-width: 100vw;
-		height: 100vh;
-		padding: 0;
-		margin: 0;
-		overflow-y: auto !important;
-		overflow-x: hidden;
 		
-		/* Default style */
-		.page-nav {
-			--search-bg: var(--inverse-surface);
-			position: sticky;
-			top: 0;
-			z-index: 50;
-			width: 100%;
-			height: 64px;
-			padding-left: 1rem;
-			padding-right: 1rem;
-			background-color: var(--search-bg);
-			border-bottom: 1px solid rgba(0 0 0 / .20);
-			transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-			box-shadow 0.4s ease;
-		}
-			
-		section.container {
-			margin: 0;
-			padding: 0;
-			padding: 0 1rem 1rem;
-			
-			.field {
-				/* margin-block-start: 1.25rem !important; */
-			}
-			&>.field, &>label {
-				margin-block-start: 1.5rem;
-			}
-			/* 
-			.row {
-				margin-block-start: 1.5rem !important;
-			} */
-		}
-		
-		form {
-			padding: 0;
-			margin: 0;
-			margin-block-start: 0 !important;
-		}
-		
-		.error-container.list-msg {
-			margin: 0 1rem;
-		}
 	}
-	
 }

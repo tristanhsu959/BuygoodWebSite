@@ -40,11 +40,11 @@
 		
 		<main class="app responsive">
 			@yield('content')
-			
 		</main>
 		
 		<footer class="fixed">
-			<h5>Fixed footer</h5>
+			<p class="no-margin">Copyright ©2026 梁社漢排骨 All Rights Reserved.</p>
+			<p class="no-margin">客服專線：02-2808-5598 ● 服務時間：週一 ~ 週五 09:00 ~ 18:00(國定假日與六日除外)</p>
 		</footer>
 		
 		<x-dialog />

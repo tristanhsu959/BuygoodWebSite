@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 
 /***** Home *****/
 Route::get('/', [HomeController::class, 'index'])->name('home');
-	
+Route::get('/news', [HomeController::class, 'index'])->name('news');
 	/***** 產品設定 *****/
 	/* Route::middleware([AccessPermissionMiddleware::class . Str::start(Functions::PRODUCT->value, ':')])->group(function(){
 		Route::get('product', [ProductController::class, 'list'])->name('products');
