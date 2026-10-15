@@ -33,7 +33,7 @@ class ActionBar extends Component
 		$menus = collect($config)->map(function($item, $key){
 			$temp['name'] 	= $item['name'];
 			$temp['style'] 	= $item['style'];
-			$temp['url'] 	= ($item['isRoute']) ? route($item['routeName']) :  $item['routeName'];
+			$temp['url'] 	= $item['iconLink'] ? $item['routeName'] : route($item['routeName']);
 			
 			return $temp;
 		})->toArray();

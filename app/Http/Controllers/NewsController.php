@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\ViewModels\HomeViewModel;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class NewsController extends Controller
 {
 	private $_service;
 	private $_currentAction = NULL;
@@ -15,7 +15,7 @@ class HomeController extends Controller
 	{
 	}
 	
-	public function index(Request $request)
+	public function list(Request $request)
 	{
 		return view('home')->with('viewModel', $this->_viewModel);
 	}

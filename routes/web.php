@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 
 /***** Home *****/
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/news', [HomeController::class, 'index'])->name('news');
+Route::get('/', [NewsController::class, 'list'])->name('home');
+Route::get('/news', [NewsController::class, 'list'])->name('news');
 	/***** 產品設定 *****/
 	/* Route::middleware([AccessPermissionMiddleware::class . Str::start(Functions::PRODUCT->value, ':')])->group(function(){
 		Route::get('product', [ProductController::class, 'list'])->name('products');
